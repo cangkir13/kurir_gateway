@@ -1,7 +1,7 @@
 const development = {
-  database: 'orenda',
+  database: 'db_kurir_gw_dev',
   username: 'root',
-  password: 'milano123',
+  password: 'Ramujibril*9',
   host: 'localhost',
   dialect: 'mysql' ,
 };

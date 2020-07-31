@@ -3,26 +3,19 @@ const schemas = require('../../api/middleware/validation/validateSchema')
 
 const userRoutes = {
 
-  'POST /register':  {
-					    path: 'UserController.register',
-					    middlewares: [validate(schemas.createUser)],
-					 },
-
-  'POST /assign': {
-					path: 'TaskController.register',
-					middlewares: [validate(schemas.createTask)],
+	'POST /register' : {
+						path:'UserRegister.Register',
+						middlewares: [validate(schemas.Register)]
 					},
 
-  'POST /unassign': {
-					path: 'TaskController.destroy',
-					middlewares: [validate(schemas.unassignTask)],
-					},
+	'POST /login': {
+		path:'UserAccess.Login',
+		middlewares: [validate(schemas.Login)]
+	},
 
-  'POST /tasks/common': {
-					     path: 'UserController.getTasks',
-					     middlewares: [validate(schemas.assignTask)],
-						},
-
+	'GET /foop/:token':'Tesfoo.foo',
+	// 'POST /forgotpassword':'',
+	// 'GET /getlistOffice':'GetUserOD.GetListOffice',
 };
 
 module.exports = userRoutes;
