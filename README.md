@@ -16,7 +16,7 @@
 #### Cloning Repository 
 
 ```sh
-$ git clone https://github.com/ipoyy/express-rest-api.git
+$ git clone https://github.com/cangkir13/kurir_gateway
 ``` 
 
 #### Install Modules & Dependencies
@@ -39,44 +39,6 @@ $ npm start
 $ npm run production
 ```
 Server will starts on 127.0.0.1:2017 or on 127.0.0.1:PORT_ENV
-
-## Routes
-```sh
-localhost:2017/api/register # Create user(s)
-localhost:2017/api/assign # assign task(s) to user
-localhost:2017/api/unassign # remove task(s) from user
-localhost:2017/api/task/common # show user(s) tasks
-```
-
-## Example Requests
-##### Create User
-```json
-{
-  "Users": ["example1@email.com","example2@email.com" ]
-}
-```
-
-##### Assign task(s) to user
-```json
-{
-    "user": "example1@email.com",
-    "tasks": ["Buy Love","Buy Flowers"]
-}
-```
-##### Remove task(s) from user
-```json
-{
-    "user": "example1@email.com",
-    "tasks": ["Buy Love"]
-}
-```
-
-##### List of tasks
-```json
-{
-  "Users": ["example1@email.com","example2@email.com"]
-}
-```
 
 
 
