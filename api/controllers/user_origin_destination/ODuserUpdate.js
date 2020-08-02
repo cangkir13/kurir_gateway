@@ -86,7 +86,6 @@ const ODuserUpdate = () => {
                     await RES(404, {error:'Data location not found'}).modul()
                 );
 
-                
             await Userdes.update({
                 idlocation:destionation.id,
                 nama_penerima:body.nama_penerima,
