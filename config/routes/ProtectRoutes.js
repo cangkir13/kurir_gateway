@@ -31,6 +31,11 @@ const ProtectRoutes = {
         middlewares: [validate(schemas.UpdateDestination)]
     },
     
+    // GET PRICE USER 
+    'POST /GetPriceLatLong' : {
+        path:'user_getprice/GetPriceLatlong.index',
+        middlewares: [validate(schemas.PriceLatlong)]
+    }
     
 }
 

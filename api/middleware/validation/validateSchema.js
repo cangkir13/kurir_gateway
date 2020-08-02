@@ -119,6 +119,11 @@ const schemas = {
     kodepos: Joi.number().required(),
   }),
 
+  // price user with lat long
+  PriceLatlong: Joi.object().keys({
+    kode: Joi.string().required(),
+    weight: Joi.number().required(),
+  })
   // define all the other schemas below 
 }; 
 module.exports = schemas;
