@@ -1,3 +1,6 @@
+/**
+ * Controller create data origin/office and destinaton 
+ */
 const Userorg = require('../../models/User_origin');
 const Userdes = require('../../models/User_destination');
 const RES = require('../../services/modul.res');

@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const http = require('http');
 const mapRoutes = require('express-routes-mapper');
 const cors = require('cors');
-const moragan = require('morgan');
+const morgan = require('morgan');
 const authUsers = require('./services/authUsers') // protect route
 
 /**

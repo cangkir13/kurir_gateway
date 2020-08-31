@@ -1,3 +1,6 @@
+/**
+ * Controller for Get and find data origin and destination (customer of client)
+ */
 const RES = require('../../services/modul.res');
 const Userorg = require('../../models/User_origin');
 const Userdes = require('../../models/User_destination');

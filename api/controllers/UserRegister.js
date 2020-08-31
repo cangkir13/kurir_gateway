@@ -1,3 +1,7 @@
+/**
+ * Controller for registrasi client to kurir_gateway
+ */
+
 const Usercmp = require('../models/User_company');
 const Userpri = require('../models/User_privileges');
 const UserPack = require('../models/User_package');

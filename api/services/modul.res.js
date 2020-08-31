@@ -1,10 +1,16 @@
+/**
+ * 
+ * @param {200, 400 etc} status_code is http status code for server
+ * @param {object or array object or ect} response return data value as response
+ */
+
 const modulRes = (status_code, response) => {
     const status_true = async() => {
-        return {status:true, status_code, data:{response:response}}
+        return {status:true, status_code, response}
     }
 
     const status_false = async() => {
-        return {status:false, status_code, data:{msg:response}}
+        return {status:false, status_code, response}
     }
 
     const modul = async() => {

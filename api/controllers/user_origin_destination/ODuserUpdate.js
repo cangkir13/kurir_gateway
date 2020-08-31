@@ -1,3 +1,6 @@
+/**
+ * Controller user to update data origin and destination
+ */
 const RES = require('../../services/modul.res');
 const Userorg = require('../../models/User_origin');
 const Userdes = require('../../models/User_destination');

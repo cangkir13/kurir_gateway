@@ -5,7 +5,6 @@ const userPack = require('../../models/Master_package');
 const userOrigin = require('../../models/User_origin');
 const userDestination = require('../../models/User_destination');
 const geolib = require('geolib');
-const { asinh } = require('core-js/fn/number');
 
 const findCompny = async(id) => {
     return await company.findOne({
@@ -62,6 +61,8 @@ const findNearsCord = async(id, kode) => {
     }
 
     let customer = await findDestination(id, kode)
+    // console.log(customer);
+    
     if (!customer) {
         return {status:false, msg:"Data customer not found"}
     }
@@ -82,14 +83,10 @@ const findNearsCord = async(id, kode) => {
         latitude:customer.master_area.lat,
         longitude:customer.master_area.long,
     }
-    let destlat = customer.master_area.lat
-    let destlng = customer.master_area.long
     
-
     let response = geolib.findNearest(receiver, officers);
 
     let dataReturn = {
-        status:true,
         sender:response,
         receiver:receiver
     }

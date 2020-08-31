@@ -1,3 +1,7 @@
+/**
+ * Contoller for login with JWT
+ */
+
 const Response = require('../services/modul.res');
 const bcryptService = require('../services/bcryptService');
 const AuthSrvs = require('../services/authService');
