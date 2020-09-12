@@ -14,6 +14,7 @@ const userRoutes = {
 	},
 
 	'GET /foop/:token':'Tesfoo.foo',
+	'POST /Upload':'Tesfoo.UploadFile',
 	// 'POST /forgotpassword':'',
 	// 'GET /getlistOffice':'GetUserOD.GetListOffice',
 };

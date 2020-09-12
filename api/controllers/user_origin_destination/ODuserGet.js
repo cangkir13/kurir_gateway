@@ -29,18 +29,18 @@ const ODuserGet = () => {
         const {client_code, iduser, level} = req.users;
         if (iduser == '' || !Number.isInteger(iduser)) {
             return res.status(403).json(
-                await RES(403, {error:"Access denide"}).modul()    
+                RES(403, {error:"Access denide"}).modul()    
             );
         }
         
         let response = await listOrgByIdCorp(iduser)    
         if (!response || response.length < 1) 
             return res.status(404).json(
-                await RES(404, {error:"Office are nothing, please insert office"}).modul()    
+                RES(404, {error:"Office are nothing, please insert office"}).modul()    
             );
         
         return res.json(
-            await RES(200, response).modul()
+            RES(200, response).modul()
         )
 
     };
@@ -49,17 +49,17 @@ const ODuserGet = () => {
         const {client_code, iduser, level} = req.users;
         if (iduser == '' || !Number.isInteger(iduser)) {
             return res.status(403).json(
-                await RES(403, {error:"Access denide"}).modul()    
+                RES(403, {error:"Access denide"}).modul()    
             );
         }
         let response = await listDesByIdCorp(iduser)    
         if (!response || response.length < 1) 
             return res.status(403).json(
-                await RES(403, {error:"Your Customer are nothing, please insert first"}).modul()    
+                RES(403, {error:"Your Customer are nothing, please insert first"}).modul()    
             );
         
         return res.json(
-            await RES(200, response).modul()
+            RES(200, response).modul()
         )
 
     }

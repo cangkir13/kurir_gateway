@@ -5,19 +5,19 @@
  */
 
 const modulRes = (status_code, response) => {
-    const status_true = async() => {
+    const status_true = () => {
         return {status:true, status_code, response}
     }
 
-    const status_false = async() => {
+    const status_false = () => {
         return {status:false, status_code, response}
     }
 
-    const modul = async() => {
+    const modul = () => {
         if (status_code >= 200 && status_code < 300) {
-            return await status_true();
+            return status_true();
         } else {
-            return await status_false();
+            return status_false();
         }
     }
 

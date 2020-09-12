@@ -30,19 +30,19 @@ const UserRegister = () => {
                 let valData = await MiddleReg().runval(req)
                 if (valData != false ) 
                     return res.status(400)
-                                .json(await Response(400, {error:valData} ).modul());
+                                .json( Response(400, {error:valData} ).modul());
     
                 // middleware for maping area
                 let valMaps = await MiddleReg()
                         .valMap(provinsi, kabupaten, kecamatan, kelurahan, kodepos)
                 if (valMaps.status == false) 
-                    return res.status(400).json(await Response(400, {error:valMaps.msg} ).modul());
+                    return res.status(400).json( Response(400, {error:valMaps.msg} ).modul());
     
                 // middleware for courier available
                 let valPaket = await MiddleReg().valPackge(req)
                 if (valPaket.status == false) 
                     return res.status(400)
-                        .json(await Response(400, {error:valPaket.msg} ).modul());
+                        .json( Response(400, {error:valPaket.msg} ).modul());
                 
                 // param post corporate
                 let company = {
@@ -108,12 +108,12 @@ const UserRegister = () => {
                 }
                 await transaction.commit();  
                 res.status(201).json(
-                    await Response(201, {
+                     Response(201, {
                         corporate,  note:"Data has been created" } ).modul());
                 
             }else{
                 res.status(400).json(
-                    await Response(400, {password:"password not mach"} ).modul());
+                     Response(400, {password:"password not mach"} ).modul());
             }
         } catch (error) {
             await transaction.rollback();

@@ -1,10 +1,17 @@
 const company = require('../../models/User_company');
 const masterArea = require('../../models/Master_area');
 const masterCourier = require('../../models/Master_courier');
-const userPack = require('../../models/Master_package');
+const masterPackage = require('../../models/Master_package');
+const UserPackage = require('../../models/User_package');
 const userOrigin = require('../../models/User_origin');
 const userDestination = require('../../models/User_destination');
 const geolib = require('geolib');
+
+const userPackgeUse = async(co_code) => {
+    return await UserPackage.findOne({
+        where:{co_code}
+    })
+}
 
 const findCompny = async(id) => {
     return await company.findOne({
@@ -66,7 +73,7 @@ const findNearsCord = async(id, kode) => {
     if (!customer) {
         return {status:false, msg:"Data customer not found"}
     }
-
+    
     let receiver = {
         kode:customer.kode,
         nama_penerima:customer.nama_penerima,
@@ -83,12 +90,24 @@ const findNearsCord = async(id, kode) => {
         latitude:customer.master_area.lat,
         longitude:customer.master_area.long,
     }
+
+    let packageUser = await userPackgeUse(id)
+
+    if (!packageUser) {
+        return {status:false, msg:"Packge user not found please call our team"}
+    }
+
+    let packge = {
+        type:packageUser.type_sv,
+        price_packge:packageUser.price_sv
+    }
     
     let response = geolib.findNearest(receiver, officers);
 
     let dataReturn = {
         sender:response,
-        receiver:receiver
+        receiver:receiver,
+        packge,
     }
     
     return dataReturn

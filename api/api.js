@@ -41,8 +41,8 @@ const server = http.Server(app);
 /**
  * https://www.npmjs.com/package/express-routes-mapper + middleware example
  */
-const mappedUserRoutes = mapRoutes(config.userRoutes, 'api/controllers/', validatePolicy().requiredHeaders);
-const mappedProtRoutes = mapRoutes(config.protectRoutes, 'api/controllers/', validatePolicy().requiredHeaders);
+const mappedUserRoutes = mapRoutes(config.userRoutes, 'api/controllers/', );
+const mappedProtRoutes = mapRoutes(config.protectRoutes, 'api/controllers/', );
 
 
 /**

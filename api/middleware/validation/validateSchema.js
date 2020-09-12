@@ -122,7 +122,12 @@ const schemas = {
   // price user with lat long
   PriceLatlong: Joi.object().keys({
     kode: Joi.string().required(),
+    harga: Joi.number().required(),
+    quantity: Joi.number().required(),
     weight: Joi.number().required(),
+    height: Joi.number().required(),
+    width: Joi.number().required(),
+    
   })
   // define all the other schemas below 
 }; 

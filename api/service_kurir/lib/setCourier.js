@@ -30,13 +30,20 @@ const CourierPack = async(id) => {
     let couriersAvail = await CourierCheck(couriers);
     let couriersAvailRet =[]
     for (let index = 0; index < couriersAvail.length; index++) {
-        couriersAvailRet.push({
-            courier:couriersAvail[index].courier,
-            label:couriersAvail[index].label,
-            image:couriersAvail[index].image,
-            is_cod:couriersAvail[index].is_cod,
-        })
+        couriersAvailRet.push(
+            {
+                courier:couriersAvail[index].courier,
+                image:couriersAvail[index].image,
+            }
+        )
     }
+
+    // couriersAvailRet.push({
+    //     courier:couriersAvail[index].courier,
+    //     label:couriersAvail[index].label,
+    //     image:couriersAvail[index].image,
+    //     is_cod:couriersAvail[index].is_cod,
+    // })
 
     return couriersAvailRet //{couriersAvailRet, courierUsr, couriers}
 }

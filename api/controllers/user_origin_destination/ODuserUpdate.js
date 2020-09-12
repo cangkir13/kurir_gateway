@@ -35,7 +35,7 @@ const ODuserUpdate = () => {
             
             if(!await CheckIDorg(iduser, office))
                 return res.status(403).json(
-                    await RES(403, {error:'data Office not found'}).modul()
+                    RES(403, {error:'data Office not found'}).modul()
                 );
 
             let origin = await Mapcheck(
@@ -45,7 +45,7 @@ const ODuserUpdate = () => {
                             );
                             
             if (!origin ) return res.status(404).json(
-                await RES(404, {error:'Data location not found'}).modul()
+                RES(404, {error:'Data location not found'}).modul()
             );
 
             await Userorg.update({
@@ -58,11 +58,11 @@ const ODuserUpdate = () => {
             }, {where:{office}} ) 
 
             return res.json(
-                await RES(201, "Data Office origin has been updated").modul()    
+                RES(201, "Data Office origin has been updated").modul()    
             )
         } catch (error) {
             return res.status(500).json(
-                await RES(500, {error:"Sory, "+error.message}).modul()    
+                RES(500, {error:"Sory, "+error.message}).modul()    
             )
         }
     }
@@ -75,7 +75,7 @@ const ODuserUpdate = () => {
             // return res.json(await CheckIDdest(iduser, kode))
             if(!await CheckIDdest(iduser, kode))
                 return res.status(403).json(
-                    await RES(403, {error:'data not found'}).modul()
+                    RES(403, {error:'data not found'}).modul()
                 );
 
             let destionation = await Mapcheck(
@@ -86,7 +86,7 @@ const ODuserUpdate = () => {
                             
             if (!destionation ) 
                 return res.status(404).json(
-                    await RES(404, {error:'Data location not found'}).modul()
+                    RES(404, {error:'Data location not found'}).modul()
                 );
 
             await Userdes.update({
@@ -99,11 +99,11 @@ const ODuserUpdate = () => {
             }, {where:{kode}} ) 
 
             return res.json(
-                await RES(201, "Data destination has been updated").modul()    
+                RES(201, "Data destination has been updated").modul()    
             )
         } catch (error) {
             return res.status(500).json(
-                await RES(500, {error:"Sory, "+error.message}).modul()    
+                RES(500, {error:"Sory, "+error.message}).modul()    
             )
         }
     }

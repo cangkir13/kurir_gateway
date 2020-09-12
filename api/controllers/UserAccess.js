@@ -22,19 +22,19 @@ const UserAccess = () => {
         })
         if (!datauser) {
             return res.status(404).json(
-                await Response(404, {error:"Username and client_code not found"}).modul()
+                Response(404, {error:"Username and client_code not found"}).modul()
             );
         }
 
         if (datauser.status < 1) {
             return res.status(401).json(
-                await Response(401, {error:"Your account is not active"}).modul()
+                Response(401, {error:"Your account is not active"}).modul()
             );
         }
 
         if (moment().isAfter(datauser.expired_at)) {
             return res.status(400).json(
-                await Response(400, {error:"Your account has expired, Please contact our team"}).modul()
+                Response(400, {error:"Your account has expired, Please contact our team"}).modul()
             )
         } 
 
@@ -51,7 +51,7 @@ const UserAccess = () => {
             // })
             
             return res.status(200).json(
-                await Response(200, 
+                Response(200, 
                     {
                         type:"Bearer",
                         token,
@@ -61,7 +61,7 @@ const UserAccess = () => {
         }
         
         return res.status(401).json(
-            await Response(401, { response:"Ops sory your account denide"}).modul()
+            Response(401, { response:"Ops sory your account denide"}).modul()
         );
     }
 

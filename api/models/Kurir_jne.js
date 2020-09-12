@@ -16,7 +16,7 @@ const Kurir_jne = sequelize.define('kurir_jne', {
   destination_code: {
     type: Sequelize.STRING,
   },
-  provins: {
+  provinsi: {
     type: Sequelize.STRING,
   },
   kota: {

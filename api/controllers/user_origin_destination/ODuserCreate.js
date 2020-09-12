@@ -23,7 +23,7 @@ const ODuserCreate = () => {
                             )
 
             if (!originv ) return res.status(404).json(
-                await RES(404, {error:'Data origin not found'}).modul()
+                 RES(404, {error:'Data origin not found'}).modul()
             ) 
 
             let destinationv = await Mapcheck(
@@ -33,7 +33,7 @@ const ODuserCreate = () => {
                         )
 
             if (!destinationv ) return res.status(404).json(
-                await RES(404, {error:'Data destination not found'}).modul()
+                 RES(404, {error:'Data destination not found'}).modul()
             ) 
             
             await Userorg.create({
@@ -63,13 +63,13 @@ const ODuserCreate = () => {
 
             await transaction.commit();  
             return res.json(
-                await RES(201, "Office/origin and destination has been added").modul()    
+                 RES(201, "Office/origin and destination has been added").modul()    
             )
 
         } catch (error) {
             await transaction.rollback();
             return res.status(403).json(
-                await RES(403, {error:"Access denide", note:error.message}).modul()
+                 RES(403, {error:"Access denide", note:error.message}).modul()
             )
         }
     };
@@ -85,7 +85,7 @@ const ODuserCreate = () => {
                             body.kodepos
                             );
             if (!origin ) return res.status(404).json(
-                await RES(404, {error:'Data origin not found'}).modul()
+                 RES(404, {error:'Data origin not found'}).modul()
             );
 
             await Userorg.create({
@@ -101,11 +101,11 @@ const ODuserCreate = () => {
             } ) 
 
             return res.json(
-                await RES(201, "Data Office origin has been added").modul()    
+                 RES(201, "Data Office origin has been added").modul()    
             )
         } catch (error) {
             return res.status(403).json(
-                await RES(403, {error:"Access denide", note:error.message}).modul()
+                 RES(403, {error:"Access denide", note:error.message}).modul()
             )
         }
     }
@@ -121,7 +121,7 @@ const ODuserCreate = () => {
                             body.kodepos
                             );
             if (!destination ) return res.status(404).json(
-                await RES(404, {error:'Data destination not found'}).modul()
+                 RES(404, {error:'Data destination not found'}).modul()
             );
 
             await Userdes.create({
@@ -137,11 +137,11 @@ const ODuserCreate = () => {
             } ) 
 
             return res.json(
-                await RES(201, "Data destination has been added").modul()    
+                 RES(201, "Data destination has been added").modul()    
             )
         } catch (error) {
             return res.status(403).json(
-                await RES(403, {error:"Access denide", note:error.message}).modul()
+                 RES(403, {error:"Access denide", note:error.message}).modul()
             )
         }
     }
