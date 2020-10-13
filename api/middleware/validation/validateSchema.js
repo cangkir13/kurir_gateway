@@ -127,8 +127,17 @@ const schemas = {
     weight: Joi.number().required(),
     height: Joi.number().required(),
     width: Joi.number().required(),
-    
+  }),
+  
+  PriceOffice: Joi.object().keys({
+    office: Joi.string().required(),
+    destination: Joi.string().required(),
+    harga: Joi.number().required(),
+    quantity: Joi.number().required(),
+    weight: Joi.number().required(),
+    height: Joi.number().required(),
+    width: Joi.number().required(),
   })
-  // define all the other schemas below 
+
 }; 
 module.exports = schemas;

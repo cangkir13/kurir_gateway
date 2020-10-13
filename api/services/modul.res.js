@@ -1,5 +1,4 @@
 /**
- * 
  * @param {200, 400 etc} status_code is http status code for server
  * @param {object or array object or ect} response return data value as response
  */

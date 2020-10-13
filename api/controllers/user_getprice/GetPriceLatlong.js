@@ -25,8 +25,8 @@ const GetPriceLatlong = () => {
         
         // check courier activity
         let CourierUser = await CourierPack(iduser)    
-        // console.log(CourierUser);
-
+        
+        /* filter and push data to @param Push_value */
         let Push_value = []
         for (let [key, val] of Object.entries(ModulePrice)) {
             for (let i=0; i < CourierUser.length; i++) {    
@@ -38,8 +38,6 @@ const GetPriceLatlong = () => {
         
         // let dataPush = [{weight:req.body.weight}, UserData, {response_courier:Push_value}]
         
-        
-
         let dataPush = globalpush(req.body, UserData, Push_value)
         return res.status(dataPush.status_code).json(
             RES(200, dataPush.res).modul()

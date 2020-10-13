@@ -15,6 +15,9 @@ const userRoutes = {
 
 	'GET /foop/:token':'Tesfoo.foo',
 	'POST /Upload':'Tesfoo.UploadFile',
+
+	'POST /tesAWB' : 'user_genawb/GenAwbLatlong.createAwb'
+
 	// 'POST /forgotpassword':'',
 	// 'GET /getlistOffice':'GetUserOD.GetListOffice',
 };

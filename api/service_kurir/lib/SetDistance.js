@@ -99,7 +99,8 @@ const findNearsCord = async(id, kode) => {
 
     let packge = {
         type:packageUser.type_sv,
-        price_packge:packageUser.price_sv
+        price_packge:packageUser.price_sv,
+        msg:packageUser.type_sv === 1? 'Per KG':'Per Packge'
     }
     
     let response = geolib.findNearest(receiver, officers);

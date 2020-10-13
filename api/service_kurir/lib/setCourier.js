@@ -13,9 +13,10 @@ const CourierUser = async(id) => {
 const CourierCheck = async(arrayCR) => {
     return await masterCourier.findAll({
         where:{
-            courier:{
-                [Op.in]:arrayCR
-            },
+            courier:arrayCR,
+            // courier:{
+            //     [Op.in]:arrayCR
+            // },
             active:1
         }
     })
@@ -37,13 +38,6 @@ const CourierPack = async(id) => {
             }
         )
     }
-
-    // couriersAvailRet.push({
-    //     courier:couriersAvail[index].courier,
-    //     label:couriersAvail[index].label,
-    //     image:couriersAvail[index].image,
-    //     is_cod:couriersAvail[index].is_cod,
-    // })
 
     return couriersAvailRet //{couriersAvailRet, courierUsr, couriers}
 }

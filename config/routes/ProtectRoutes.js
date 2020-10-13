@@ -35,8 +35,12 @@ const ProtectRoutes = {
     'POST /GetPriceLatLong' : {
         path:'user_getprice/GetPriceLatlong.index',
         middlewares: [validate(schemas.PriceLatlong)]
-    }
-    
+    },
+
+    'POST /GetPriceOffice' : {
+        path:'user_getprice/GetPriceoffice.index',
+        middlewares: [validate(schemas.PriceOffice)]
+    },
 }
 
 module.exports = ProtectRoutes
