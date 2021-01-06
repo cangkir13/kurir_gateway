@@ -20,7 +20,7 @@
   "dependencies": {
     "@hapi/joi": "^15.0.3",
     "async-redis": "^1.1.7",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.19.0",
     "core-js": "^2.6.9",
