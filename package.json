@@ -41,7 +41,7 @@
     "mysql2": "^1.7.0",
     "node-datetime": "^2.1.2",
     "nodejs-base64": "^1.0.3",
-    "redis": "^3.0.2",
+    "redis": "^3.1.1",
     "sequelize": "^5.19.5",
     "soap": "^0.31.0",
     "tunnel-ssh": "^4.1.4",
