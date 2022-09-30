@@ -18,7 +18,7 @@
     "production": "cross-env NODE_ENV=production node ./api/api.js"
   },
   "dependencies": {
-    "@hapi/joi": "^15.0.3",
+    "@hapi/joi": "^15.1.1",
     "async-redis": "^1.1.7",
     "axios": "^0.19.2",
     "bcrypt-nodejs": "0.0.3",
